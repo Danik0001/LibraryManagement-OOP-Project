@@ -1,14 +1,15 @@
-package com.daniyal.library;
+import com.daniyal.library.Book;
+import com.daniyal.library.Library;
 
-public class Main {
-    public static void main(String[] args) {
+public static void main(String[] args) {
+    Library library = new Library();
 
-        System.out.println("Welcome to the Library Management System");
-        System.out.println("This project is designed to manage books and library members.");
-        System.out.println("Main features will include:");
-        System.out.println("- Adding and removing books");
-        System.out.println("- Registering members and tracking borrowed books");
-        System.out.println("Developed by: daniyal | Object-Oriented Programming Course");
-    }
+    Book book1 = new Book("1984", "George Orwell");
+    Book book2 = new Book("Clean Code", "Robert Martin");
+
+    library.addBook(book1);
+    library.addBook(book2);
+
+    library.showBooks();
 }
 
