@@ -1,4 +1,4 @@
-package com.Daniyal.library;
+package com.da.library;
 
 public class Main {
     public static void main(String[] args) {
@@ -8,7 +8,7 @@ public class Main {
         System.out.println("Main features will include:");
         System.out.println("- Adding and removing books");
         System.out.println("- Registering members and tracking borrowed books");
-        System.out.println("Developed by: Daniyal | Object-Oriented Programming Course");
+        System.out.println("Developed by: daniyal | Object-Oriented Programming Course");
     }
 }
 
