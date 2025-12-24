@@ -1,15 +1,33 @@
-import com.daniyal.library.Book;
-import com.daniyal.library.Library;
+package com.daniyal.library;
 
-public static void main(String[] args) {
-    Library library = new Library();
+public class Main {
+    public static void main(String[] args) {
 
-    Book book1 = new Book("1984", "George Orwell");
-    Book book2 = new Book("Clean Code", "Robert Martin");
+        System.out.println("=== Vet Clinic System ===");
 
-    library.addBook(book1);
-    library.addBook(book2);
+        VetClinic clinic = new VetClinic();
 
-    library.showBooks();
+        Owner owner1 = new Owner("Alex", "+77001234567", 1);
+        Owner owner2 = new Owner("Anna", "+77007654321", 3);
+
+        Pet pet1 = new Pet("Bobik", "Dog", 1, "Alex");
+        Pet pet2 = new Pet("Murka", "Cat", 4, "Anna");
+
+        clinic.addPet(pet1);
+        clinic.addPet(pet2);
+
+        System.out.println("\n--- All pets ---");
+        clinic.showPets();
+
+        System.out.println("\nIs Bobik young? " + pet1.isYoung());
+        pet1.grow();
+        System.out.println("Bobik after growing: " + pet1);
+
+        System.out.println("\nOwners:");
+        System.out.println(owner1);
+        System.out.println(owner2);
+
+        System.out.println("\n=== Program finished ===");
+    }
 }
 
