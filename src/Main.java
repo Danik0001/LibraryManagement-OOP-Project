@@ -7,6 +7,9 @@ public class Main {
 
         VetClinic clinic = new VetClinic();
 
+        clinic.setClinicName("Happy Vet Clinic");
+        clinic.setAddress("Almaty");
+
         Owner owner1 = new Owner("Alex", "+77001234567", 1);
         Owner owner2 = new Owner("Anna", "+77007654321", 3);
 
@@ -23,11 +26,18 @@ public class Main {
         pet1.grow();
         System.out.println("Bobik after growing: " + pet1);
 
-        System.out.println("\nOwners:");
+        System.out.println("\nClinic name: " + clinic.getClinicName());
+        System.out.println("Clinic address: " + clinic.getAddress());
+        System.out.println("Total pets in clinic: " + clinic.getTotalPets());
+
+        System.out.println("\nOwner info:");
         System.out.println(owner1);
         System.out.println(owner2);
+
+        owner1.addPet();
+        System.out.println("\nOwner after adding pet:");
+        System.out.println(owner1);
 
         System.out.println("\n=== Program finished ===");
     }
 }
-

@@ -14,17 +14,43 @@ public class Pet {
         this.ownerName = ownerName;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getSpecies() {
+        return species;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getOwnerName() {
+        return ownerName;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSpecies(String species) {
+        this.species = species;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
+    }
+
     public boolean isYoung() {
         return age < 2;
     }
 
     public void grow() {
         age++;
-    }
-
-    @Override
-    public String toString() {
-        return "Pet{name='" + name + "', species='" + species +
-                "', age=" + age + ", owner='" + ownerName + "'}";
     }
 }
