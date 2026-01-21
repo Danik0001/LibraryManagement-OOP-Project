@@ -1,61 +1,53 @@
 package com.daniyal.library;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class VetClinic {
+public class VetClinic implements ClinicManageable {
 
-    private ArrayList<Pet> pets;
-    private String clinicName;
-    private String address;
-    private int totalPets;
+    private List<Owner> owners;
+    private List<Pet> pets;
 
     public VetClinic() {
-        this.pets = new ArrayList<>();
-        this.clinicName = "Happy Vet";
-        this.address = "Almaty";
-        this.totalPets = 0;
+        owners = new ArrayList<>();
+        pets = new ArrayList<>();
     }
 
-    public ArrayList<Pet> getPets() {
-        return pets;
+    @Override
+    public void addOwner(Owner owner) {
+        if (owner == null) {
+            throw new IllegalArgumentException("Owner cannot be null");
+        }
+        owners.add(owner);
     }
 
-    public String getClinicName() {
-        return clinicName;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public int getTotalPets() {
-        return totalPets;
-    }
-
-    public void setClinicName(String clinicName) {
-        this.clinicName = clinicName;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
+    @Override
     public void addPet(Pet pet) {
+        if (pet == null) {
+            throw new IllegalArgumentException("Pet cannot be null");
+        }
         pets.add(pet);
-        totalPets++;
-        System.out.println("Pet added: " + pet);
     }
 
-    public void showPets() {
-        for (Pet pet : pets) {
-            System.out.println(pet);
+    @Override
+    public void showOwners() {
+        if (owners.isEmpty()) {
+            System.out.println("No owners found");
+            return;
+        }
+        for (Owner owner : owners) {
+            System.out.println(owner);
         }
     }
 
     @Override
-    public String toString() {
-        return "VetClinic{name='" + clinicName +
-                "', address='" + address +
-                "', totalPets=" + totalPets + "}";
+    public void showPets() {
+        if (pets.isEmpty()) {
+            System.out.println("No pets found");
+            return;
+        }
+        for (Pet pet : pets) {
+            System.out.println(pet);
+        }
     }
 }

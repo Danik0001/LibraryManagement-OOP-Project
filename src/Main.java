@@ -1,43 +1,75 @@
 package com.daniyal.library;
 
+import java.util.Scanner;
+
 public class Main {
+
     public static void main(String[] args) {
 
-        System.out.println("=== Vet Clinic System ===");
-
+        Scanner scanner = new Scanner(System.in);
         VetClinic clinic = new VetClinic();
 
-        clinic.setClinicName("Happy Vet Clinic");
-        clinic.setAddress("Almaty");
+        boolean running = true;
 
-        Owner owner1 = new Owner("Alex", "+77001234567", 1);
-        Owner owner2 = new Owner("Anna", "+77007654321", 3);
+        while (running) {
+            System.out.println("\n--- Vet Clinic Menu ---");
+            System.out.println("1. Add owner");
+            System.out.println("2. Add pet");
+            System.out.println("3. Show owners");
+            System.out.println("4. Show pets");
+            System.out.println("0. Exit");
+            System.out.print("Choose option: ");
 
-        Pet pet1 = new Pet("Bobik", "Dog", 1, "Alex");
-        Pet pet2 = new Pet("Murka", "Cat", 4, "Anna");
+            int choice = scanner.nextInt();
+            scanner.nextLine(); // buffer cleanup
 
-        clinic.addPet(pet1);
-        clinic.addPet(pet2);
+            switch (choice) {
+                case 1 -> {
+                    System.out.print("Owner name: ");
+                    String name = scanner.nextLine();
 
-        System.out.println("\n--- All pets ---");
-        clinic.showPets();
+                    System.out.print("Phone: ");
+                    String phone = scanner.nextLine();
 
-        System.out.println("\nIs Bobik young? " + pet1.isYoung());
-        pet1.grow();
-        System.out.println("Bobik after growing: " + pet1);
+                    System.out.print("Number of pets: ");
+                    int pets = scanner.nextInt();
+                    scanner.nextLine();
 
-        System.out.println("\nClinic name: " + clinic.getClinicName());
-        System.out.println("Clinic address: " + clinic.getAddress());
-        System.out.println("Total pets in clinic: " + clinic.getTotalPets());
+                    Owner owner = new Owner(name, phone, pets);
+                    clinic.addOwner(owner);
+                }
 
-        System.out.println("\nOwner info:");
-        System.out.println(owner1);
-        System.out.println(owner2);
+                case 2 -> {
+                    System.out.print("Pet name: ");
+                    String petName = scanner.nextLine();
 
-        owner1.addPet();
-        System.out.println("\nOwner after adding pet:");
-        System.out.println(owner1);
+                    System.out.print("Species: ");
+                    String species = scanner.nextLine();
 
-        System.out.println("\n=== Program finished ===");
+                    System.out.print("Age: ");
+                    int age = scanner.nextInt();
+                    scanner.nextLine();
+
+                    System.out.print("Owner name: ");
+                    String ownerName = scanner.nextLine();
+
+                    Pet pet = new Pet(petName, species, age, ownerName);
+                    clinic.addPet(pet);
+                }
+
+                case 3 -> clinic.showOwners();
+
+                case 4 -> clinic.showPets();
+
+                case 0 -> {
+                    running = false;
+                    System.out.println("Goodbye!");
+                }
+
+                default -> System.out.println("Invalid option");
+            }
+        }
+
+        scanner.close();
     }
 }

@@ -1,25 +1,18 @@
 package com.daniyal.library;
 
-public class Owner {
+public class Owner extends Person {
 
-    private String name;
-    private String phone;
     private int numberOfPets;
     private boolean vip;
 
     public Owner(String name, String phone, int numberOfPets) {
-        this.name = name;
-        this.phone = phone;
-        this.numberOfPets = numberOfPets;
-        this.vip = numberOfPets > 2;
+        super(name, phone);
+        setNumberOfPets(numberOfPets);
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getPhone() {
-        return phone;
+    @Override
+    public String getRole() {
+        return "Owner";
     }
 
     public int getNumberOfPets() {
@@ -30,15 +23,10 @@ public class Owner {
         return vip;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
     public void setNumberOfPets(int numberOfPets) {
+        if (numberOfPets < 0) {
+            throw new IllegalArgumentException("Number of pets cannot be negative");
+        }
         this.numberOfPets = numberOfPets;
         this.vip = numberOfPets > 2;
     }
@@ -50,7 +38,11 @@ public class Owner {
 
     @Override
     public String toString() {
-        return "Owner{name='" + name + "', phone='" + phone +
-                "', pets=" + numberOfPets + ", vip=" + vip + "}";
+        return "Owner{" +
+                "name='" + name + '\'' +
+                ", phone='" + phone + '\'' +
+                ", pets=" + numberOfPets +
+                ", vip=" + vip +
+                '}';
     }
 }
