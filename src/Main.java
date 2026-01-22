@@ -1,5 +1,9 @@
 package com.daniyal.library;
 
+import com.daniyal.library.model.Owner;
+import com.daniyal.library.model.Pet;
+import com.daniyal.library.service.VetClinic;
+
 import java.util.Scanner;
 
 public class Main {

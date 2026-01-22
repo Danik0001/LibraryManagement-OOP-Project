@@ -1,4 +1,4 @@
-package com.daniyal.library;
+package com.daniyal.library.exception;
 
 public class InvalidPetAgeException extends RuntimeException {
 

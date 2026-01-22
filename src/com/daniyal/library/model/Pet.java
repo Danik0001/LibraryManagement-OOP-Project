@@ -1,4 +1,6 @@
-package com.daniyal.library;
+package com.daniyal.library.model;
+
+import com.daniyal.library.exception.InvalidPetAgeException;
 
 public class Pet {
 

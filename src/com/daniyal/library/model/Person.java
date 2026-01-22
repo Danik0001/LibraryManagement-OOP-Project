@@ -1,4 +1,4 @@
-package com.daniyal.library;
+package com.daniyal.library.model;
 
 public abstract class Person {
 
@@ -22,7 +22,7 @@ public abstract class Person {
         if (name == null || name.trim().isEmpty()) {
             throw new IllegalArgumentException("Name cannot be empty");
         }
-        this.name = name;
+        this.name = name; 
     }
 
     public void setPhone(String phone) {

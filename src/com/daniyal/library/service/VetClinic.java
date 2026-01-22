@@ -1,4 +1,7 @@
-package com.daniyal.library;
+package com.daniyal.library.service;
+
+import com.daniyal.library.model.Owner;
+import com.daniyal.library.model.Pet;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +14,7 @@ public class VetClinic implements ClinicManageable {
     public VetClinic() {
         owners = new ArrayList<>();
         pets = new ArrayList<>();
+
     }
 
     @Override

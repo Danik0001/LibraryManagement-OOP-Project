@@ -1,4 +1,7 @@
-package com.daniyal.library;
+package com.daniyal.library.service;
+
+import com.daniyal.library.model.Owner;
+import com.daniyal.library.model.Pet;
 
 public interface ClinicManageable {
 

@@ -1,4 +1,4 @@
-package com.daniyal.library;
+package com.daniyal.library.model;
 
 public class Owner extends Person {
 
