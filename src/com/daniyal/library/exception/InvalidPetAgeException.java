@@ -6,4 +6,3 @@ public class InvalidPetAgeException extends RuntimeException {
         super(message);
     }
 }
-
