@@ -1,7 +1,7 @@
 package menu;
 
-import menu.Menu; // Интерфейсті импорттау
-import com.daniyal.library.service.LibraryDAO; // DAO-ны жаңа пакеттен импорттау
+import menu.Menu;
+import com.daniyal.library.service.LibraryDAO;
 import java.util.Scanner;
 
 public class LibraryMenu implements Menu {

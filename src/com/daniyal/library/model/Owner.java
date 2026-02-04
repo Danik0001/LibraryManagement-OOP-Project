@@ -5,8 +5,9 @@ public class Owner extends Person {
     private int numberOfPets;
     private boolean vip;
 
-    public Owner(String name, String phone, int numberOfPets) {
-        super(name, phone);
+
+    public Owner(int id, String name, String phone, int numberOfPets) {
+        super(id, name, phone); // Person-ға ID-ні өткізу
         setNumberOfPets(numberOfPets);
     }
 
@@ -24,6 +25,7 @@ public class Owner extends Person {
     }
 
     public void setNumberOfPets(int numberOfPets) {
+        // Талап бойынша (Week 6): Exception handling in setters [cite: 86, 213]
         if (numberOfPets < 0) {
             throw new IllegalArgumentException("Number of pets cannot be negative");
         }
@@ -31,15 +33,11 @@ public class Owner extends Person {
         this.vip = numberOfPets > 2;
     }
 
-    public void addPet() {
-        numberOfPets++;
-        vip = numberOfPets > 2;
-    }
-
     @Override
     public String toString() {
         return "Owner{" +
-                "name='" + name + '\'' +
+                "id=" + getId() +
+                ", name='" + name + '\'' +
                 ", phone='" + phone + '\'' +
                 ", pets=" + numberOfPets +
                 ", vip=" + vip +

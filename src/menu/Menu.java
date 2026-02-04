@@ -1,4 +1,4 @@
-package menu; // Осылай жазылғанына көз жеткіз
+package menu;
 
 public interface Menu {
     void displayMenu();

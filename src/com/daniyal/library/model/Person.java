@@ -1,28 +1,26 @@
 package com.daniyal.library.model;
 
 public abstract class Person {
-
+    protected int id; // Базада Primary Key бар [cite: 41, 42]
     protected String name;
     protected String phone;
 
-    public Person(String name, String phone) {
+    public Person(int id, String name, String phone) {
+        this.id = id;
         setName(name);
         setPhone(phone);
     }
 
-    public String getName() {
-        return name;
-    }
+    // Абстрактілі әдіс - соңында міндетті түрде ';' болуы керек
+    public abstract String getRole();
 
-    public String getPhone() {
-        return phone;
-    }
+    public int getId() { return id; }
 
     public void setName(String name) {
         if (name == null || name.trim().isEmpty()) {
             throw new IllegalArgumentException("Name cannot be empty");
         }
-        this.name = name; 
+        this.name = name;
     }
 
     public void setPhone(String phone) {
@@ -31,7 +29,4 @@ public abstract class Person {
         }
         this.phone = phone;
     }
-
-    public abstract String getRole();
 }
-
