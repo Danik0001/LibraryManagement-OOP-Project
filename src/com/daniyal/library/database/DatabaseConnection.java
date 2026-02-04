@@ -1,4 +1,4 @@
-package com.daniyal.library.service;
+package com.daniyal.library.database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

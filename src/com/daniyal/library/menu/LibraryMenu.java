@@ -1,7 +1,6 @@
-package menu;
+package com.daniyal.library.menu;
 
-import menu.Menu;
-import com.daniyal.library.service.LibraryDAO;
+import com.daniyal.library.database.LibraryDAO;
 import java.util.Scanner;
 
 public class LibraryMenu implements Menu {

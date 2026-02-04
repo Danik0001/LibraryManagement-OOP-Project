@@ -1,4 +1,4 @@
-package menu;
+package com.daniyal.library.menu;
 
 public interface Menu {
     void displayMenu();
